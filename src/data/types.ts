@@ -10,6 +10,7 @@ export const SUBJECT_CODES = [
   'BØA1200',
   'MET1002',
   'SMØ1001',
+  'EXPH0500',
 ] as const
 
 export type SubjectCode = (typeof SUBJECT_CODES)[number]
