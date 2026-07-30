@@ -47,7 +47,7 @@
   align-content: start;
 }
 
-.hero-stats div {
+.hero-stats article {
   padding: 18px 20px;
   border: 1px solid var(--border);
   border-radius: 18px;
@@ -216,9 +216,26 @@
   font-size: 0.95rem;
 }
 
+.selection-preview {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface-elevated);
+}
+
+.selection-preview h3 {
+  margin: 0 0 12px;
+  color: var(--text-strong);
+  font-size: 1.15rem;
+}
+
+.selection-preview p + p {
+  margin-top: 10px;
+}
+
 .score-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -361,6 +378,93 @@
   max-width: 60ch;
 }
 
+.progress-block {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.progress-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.progress-track {
+  overflow: hidden;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--panel-muted);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent-secondary));
+}
+
+.breakdown-list,
+.coverage-table {
+  display: grid;
+  gap: 12px;
+}
+
+.breakdown-list {
+  margin-top: 12px;
+}
+
+.breakdown-card,
+.coverage-row,
+.question-status-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface-elevated);
+}
+
+.breakdown-card span,
+.coverage-row span,
+.question-status-row span {
+  color: var(--text-muted);
+}
+
+.breakdown-card span,
+.coverage-row div span {
+  display: block;
+  margin-top: 4px;
+}
+
+.coverage-table {
+  margin-top: 20px;
+}
+
+.coverage-row strong,
+.breakdown-card strong {
+  color: var(--text-strong);
+}
+
+.coverage-row > span,
+.breakdown-card > strong {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.question-status-row {
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 @media (max-width: 900px) {
   .app-shell {
     padding: 20px;
@@ -375,10 +479,19 @@
     grid-template-columns: 1fr;
   }
 
+  .breakdown-card,
+  .coverage-row,
+  .question-status-row,
+  .footer-actions,
   .question-header,
   .question-footer {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .coverage-row > span,
+  .breakdown-card > strong {
+    text-align: left;
   }
 }
 
